@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body, div, input {
+      margin: 0;
+      padding: 0;
+    }
+    .search {
+      position: relative;
+      width: 200px;
+      margin: 100px;
+    }
+    .bro {
+      display: none;
+      position: absolute;
+      top: -40px;
+      width: 180px;
+      border: 1px solid #333;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+      padding: 5px 0;
+      font-size: 18px;
+      line-height: 20px;
+      color: #333;
+    }
+    .bro:before {
+      content: '';
+      width: 0;
+      height: 0;
+      position: absolute;
+      top: 28px;
+      left: 18px;
+      border: 10px solid #000;
+      border-style: solid dashed dashed;
+      border-color: #fff transparent transparent;
+    }
+  </style>
+</head>
+<body>
+  <div class="search">
+    <div class="bro"></div>
+    <input type="text" placeholder="please input something">
+  </div>
+  <script>
+    var bro = document.querySelector('.bro');
+    var ins = document.querySelector('input');
+    ins.addEventListener('keyup', function() {
+      if (this.value == '') {
+        bro.style.display = 'none';
+      } else {
+        bro.style.display = 'block';
+        bro.innerText = this.value;
+      }
+    })
+    // 失去焦点隐藏盒子
+    ins.addEventListener('blur', function() {
+      bro.style.display = 'none';
+    })
+    ins.addEventListener('focus', function() {
+      if (this.value !== '') {
+        bro.style.display = 'block';
+      }
+    })
+  </script>
+</body>
+</html>

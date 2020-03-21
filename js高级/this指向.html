@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 立即执行函数this指向window
+    // (function() {
+    // console.log(this)
+    // })()
+    
+    // 定时器函数this指向window
+    // setTimeout(() => {
+    //   console.log(this)
+    // }, 1000);
+
+    function fn(a, b) {
+      console.log(a+b)
+    }
+    var o = {
+      name: "andy"
+    }
+    fn.call(o, 1,2);
+    fn.apply(o, [2, 2]);
+    var f = fn.bind(o, 3, 4)
+    f();
+  </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="./bootstrap/dist/css/botstrap.bootstrap.min.css">
+	<style type="text/css">
+		.container {
+			padding-top: 60px;
+		}
+		.padding{
+			padding: 5px 0 20px 0;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="formgroup">
+			<label>please select files</label>
+			<input type="file" id="file" name="">
+			<div class="padding" id="box"></div>
+			<div class="progress">
+				<div class="progressbar" id="bar" style="width: 0%">0%</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		var file = document.getElementById('file')
+		var bar = document.getElementById('bar')
+		var box = document.getElementById('box')
+
+		file.onchange = function() {
+			var formdata = new FormData()
+			// 将用户选择的文件追加到formdata表单对象中
+			formdata.append('attrName', this.files[0])
+			var xhr = new XMLHttpRequest()
+			xhr.open('post', 'http://localhost:3000/upload')
+			xhr.upload.onprogress = function(ev) {
+				var result = (ev.loaded / ev.total) * 100 + '%'
+				bar.style.width = result
+				bar.innerHTML = result 
+			}
+			xhr.send(formdata)
+			xhr.onload = function() {
+				if(xhr.status == 200) {
+					var result = JSON.parse(xhr.responseText)
+					var img = document.createElement('img')
+					img.src = result.path;
+					img.onload = function () {
+						box.appendChild(img)
+					}
+				}
+			}
+
+		}
+	</script>
+</body>
+</html>

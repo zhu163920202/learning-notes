@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<!-- <link rel="stylesheet" type="text/css" href="bootstrap/dist/css/bootstrap.min.css"> -->
+	
+</head>
+<body>
+	<button id="btn"> click to send</button>
+	<script>
+		function fn(data) {
+			console.log(data)
+			console.log('fn serve')
+		}
+	</script>
+
+	<!-- 将非同源服务器的请求地址写在script标签的src属性中 -->
+	<script src=""></script>
+	<script type="text/javascript">
+		var btn = document.getElementById('btn')
+		btn.onclick = function() {
+			// var script = document.createElement('script')
+			// script.src = 'http://localhost:3001/test?callback=fn'
+			// document.body.appendChild(script)
+			// script.onload = function() {
+			// 	document.body.removeChild(script)
+			// }
+			jsonp({
+				url: 'http://localhost:3001/test',
+				data: {
+					name: 'andy',
+					age: 20
+				},
+				success: function(data) {
+					console.log(data)
+				}
+			})
+		}
+		function jsonp(options) {
+			var script = document.createElement('script')
+			var params = ''
+			for(var attr in options.data) {
+				params += '&'+attr+'='+options.data[attr];
+			}
+			var fnName = 'myJsonp'+Math.random().toString().replace('.','')
+			window[fnName] = options.success
+			script.src = options.url + '?callback='+fnName+params;
+			document.body.appendChild(script)
+			script.onload = function() {
+				document.body.removeChild(script)
+			}
+		}
+
+	</script>
+</body>
+</html>

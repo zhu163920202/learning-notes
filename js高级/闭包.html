@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <ul class="nav">
+    <li>1 content</li>
+    <li>2 content</li>
+    <li>3 content</li>
+    <li>4 content</li>
+  </ul>
+  <script>
+    var lis = document.querySelector('.nav').querySelectorAll('li')
+    // 1.动态添加属性的方式获取当前点击li的索引
+    // for(var i = 0;i< lis.length; i++) {
+    //   lis[i].index = i;
+    //   lis[i].onclick = function() {
+    //     console.log(this.index)
+    //   }
+    // }
+
+    // 2. 利用闭包的方式
+    for (var i=0; i<lis.length; i++) {
+      // 创建了4个立即执行函数，i为参数
+      (function(a) {
+        lis[a].onclick = function() {
+          console.log(a)
+        }
+      })(i)
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="../jQuery.js"></script>
+  <style>
+    body, div, ul, li, img {
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-color: #000;
+    }
+    .wrap {
+      width: 630px;
+      height: 394px;
+      background-color: #000;
+      margin: 100px auto 0;
+      padding: 10px 0 0 10px;
+      border: 1px solid #fff;
+    }
+    li {
+      list-style: none;
+      float: left;
+      margin: 0 10px 10px 0;
+    }
+    img {
+      /* 图片默认与文字基线对齐，去除影响 */
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <ul>
+      <li><img src="./images/01.jpg" alt=""></li>
+      <li><img src="./images/02.jpg" alt=""></li>
+      <li><img src="./images/03.jpg" alt=""></li>
+      <li><img src="./images/04.jpg" alt=""></li>
+      <li><img src="./images/05.jpg" alt=""></li>
+      <li><img src="./images/06.jpg" alt=""></li>
+    </ul>
+  </div>
+  <script>
+    $(function() {
+      $('.wrap li').hover(function() {
+        $(this).siblings().stop().fadeTo(400, .5);
+      }, function() {
+        $(this).siblings().stop().fadeTo(400, 1);
+      })
+    })
+  </script>
+</body>
+</html>

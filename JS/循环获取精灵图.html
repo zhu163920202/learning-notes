@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .wrap {
+      width: 250px;
+      height: 250px;
+      margin: 100px auto;
+      background-color: pink;
+    }
+    .wrap li {
+    list-style: none;
+    float: left;
+    width: 24px;
+    height: 24px;
+    margin: 15px;
+    background-color: orange;
+    background: url(images/sprite.png) no-repeat;
+  }
+  </style>
+</head>
+<body>
+  <!-- 精灵图必须是有规律的，可根据公式改变坐标 -->
+  <div class="wrap">
+    <ul>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>
+  <script>
+    var lis = document.getElementsByTagName('li');
+    for (var i =0;i<lis.length;i++) {
+      var h = i*44;
+      lis[i].style.backgroundPosition = '0 -'+h+'px';
+    }
+  </script>
+</body>
+</html>

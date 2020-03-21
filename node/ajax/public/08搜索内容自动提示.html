@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="./bootstrap/dist/css/bootstrap.min.css">
+<style type="text/css">
+	.container {
+		padding-top: 150px;
+	}
+	.list-group {
+		display: none;
+	}
+</style>
+</head>
+<body>
+    <div class="container">
+    	<div class="form-group">
+    		<input type="text" placeholder="please input key words" id="search" name="">
+    		<ul class="list-group" id="list-box"></ul>
+    	</div>
+    </div>
+    <script type="text/javascript" src="./js/ajax.js"></script>
+    <script type="text/javascript" src="./js/template-web.js"></script>
+    <script type="text/html" id="tp1">
+    	{{each result}}
+    		<li class="list-group-item"> {{$value}}</li>
+    	{{/each}}
+    </script>
+    <script type="text/javascript">
+    	var search = document.getElementById('search')
+    	var listBox = document.getElementById('list-box')
+    	// 搜索框有输入即触发，加延迟输入结束后才触发
+    	var timer = null
+    	search.oninput = function() {
+    		clearTimeout(timer)
+    		var key = this.value;
+    		if(key.trim().length == 0) {
+    			listBox.style.display = 'none'
+    			return
+    		}
+            timer = setTimeout(function() {
+            ajax({
+                type: 'get',
+                url: 'http://localhost:3000/search',
+                data: {
+                    key: key
+                },
+                success: function(result) {
+                    var html = temlate('tp1', {result: result})
+                    listBox.innerHTML = html;
+                    listBox.style.display = 'block'
+                }
+            })
+            }, 800)
+    	}
+    </script>
+</body>
+</html>

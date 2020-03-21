@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./jQuery.js"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    textarea {
+      width: 300px;
+      height: 160px;
+      outline: none;
+      resize: none;
+      margin-top: 100px;
+    }
+    ul {
+      width: 450px;
+      padding-left: 80px;
+    }
+    ul li {
+      list-style: none;
+      line-height: 25px;
+      border-bottom: 1px dashed #ccc;
+      display: none;
+    }
+    ul li a {
+      float: right;
+    }
+  </style>
+</head>
+<body>
+  <div class="box" id="wrap">
+    评论内容：
+    <textarea class="txt" cols="30" rows="10"></textarea>
+    <button class="btn">submit</button>
+    <ul></ul>
+  </div>
+  <script>
+  $(function() {
+    $('.btn').on('click', function() {
+      var li = $('<li></li>');
+      li.html($('.txt').val()+'<a href="javascript:;">delete</a>');
+      $('ul').prepend(li);
+      li.slideDown();
+      $('.txt').val('');
+    })
+    // $('ul a').click(function() {
+    //   // $(this).slideUp(function() {
+    //   //   $(this).remove();
+    //   // })
+    //   $(this).remove();
+    // })
+
+    // on可以给动态创建的元素绑定事件
+    $('ul').on('click', 'a', function() {
+      $(this).parent().slideUp(function() {
+        $(this).remove();
+      })
+    })
+  })
+  </script>
+</body>
+</html>

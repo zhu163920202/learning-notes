@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./jQuery.js"></script>
+</head>
+<body>
+  <a href="www.baidu.com" title="this is title">this is content</a>
+  <input type="checkbox" checked="checked">
+  <div index="1" data-index="2">this is div</div>
+  <span>123</span>
+  <script>
+    $(function() {
+      // 获取元素固有属性
+      // console.log($("a").prop());  //err
+      console.log($("a").prop("href"));
+      $('input').change(function() {
+        console.log($(this).prop('checked'));
+      })
+      // 获取元素自定义属性
+      console.log( $('div').attr('index'));
+      $('div').attr('data-index','4');
+      console.log( $('div').attr('data-index'));
+      $("span").data("uname", "andy");
+      console.log($("span").data("uname"));
+    })
+  </script>
+</body>
+</html>

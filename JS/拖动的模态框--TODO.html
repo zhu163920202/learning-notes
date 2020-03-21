@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    html, body, div, h3, a {
+      margin: 0;
+      padding: 0;
+    }
+    a {
+      text-decoration: none;
+      color: #333;
+    }
+    .head {
+      width: 100%;
+      text-align: center;
+    }
+    /* 可以拖动，定位？ */
+    .login {  
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%; 
+      transform: translate( -50%, -50% );
+      width: 512px;
+      height: 280px;
+      box-shadow: 0 0 20px #ccc;
+
+    }
+    .title span {
+      position: absolute;
+      top: -30px;
+      right: -20px;
+      font-size: 12px;
+      background: #fff;
+      border: 1px solid #ccc;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 40px;
+    }
+  </style>
+</head>
+<body>
+  <div class="head">
+    <a href="javascript:;"><h3>click to get login window.</h3></a>
+  </div>
+  <div class="login">
+    <div class="title">
+      <h4>会员登录</h4>
+      <span class="close"><a href="javascript: void(o);" >关闭</a></span>
+    </div>
+    <div class="login-content">
+      <label for="">
+        用户名：<input type="text" value="please input name">
+      </label> <br>
+      <label for="">
+        登录密码：<input type="password" value="please input password"
+      </label><br>
+      <input type="button" value="login">
+    </div>
+  </div>
+  <div class="mask"></div>
+  <script>
+    var login = document.querySelector('.head');
+    var close = document.querySelector('.close')
+  </script>
+</body>
+</html>

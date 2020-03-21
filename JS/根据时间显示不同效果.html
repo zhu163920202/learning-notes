@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body {
+      text-align: center;
+    }
+    img {
+      display: block;
+      margin: 100px auto;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <!-- <img src="images/z.gif">
+    <h4>Good morning!</h4> -->
+    <img />
+    <h4></h4>
+  </div>
+  <script>
+    var img1 = document.querySelector('img');
+    var str = document.querySelector('h4');
+    var timer = new Date();
+    var h = timer.getHours();
+   
+    if (h<12) {
+      img1.src = "images/z.gif";
+      str.innerHTML = 'good morning!'
+    } else if (h < 18) {
+      img1.src = "images/x.gif";
+      str.innerHTML = 'good afternoon!'
+    } else {
+      img1.src = "images/w.gif";
+      str.innerHTML = 'good evening!'
+    }
+    console.log(h)
+  </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    span {
+      position: absolute;
+      top: 100px;
+      left: 0;
+      width: 100px;
+      height: 100px;
+      background-color: pink;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <button class="btn500">distance is 500.</button>
+  <button class="btn1200">distance is 1200.</button>
+  <span>this is target.</span>
+  <script>
+    function animation(obj, target, callback) {
+      // 先清除以前的定时器，只保留当前的一个定时器
+      clearInterval(obj.timer);
+      obj.timer = setInterval(() => {
+        var step = (target - obj.offsetLeft)/10;
+        step = step>0? Math.ceil(step):Math.floor(step);
+        if (obj.offsetLeft === target) {
+          clearInterval(obj.timer);
+          // 回调函数写到定时器的里面
+          if(callback) {
+            callback();
+          }
+        }
+        // if(callback) {
+        //     callback();
+        //   }
+        obj.style.left = obj.offsetLeft + step + 'px';
+      }, 1000);
+    }
+    var span = document.querySelector('span');
+    var btn5 = document.querySelector('.btn500');
+    var btn12 = document.querySelector('.btn1200');
+
+    btn5.addEventListener('click', function() {
+      animation(span, 500);
+    })
+    btn12.addEventListener('click', function() {
+      animation(span, 1200, function() {
+        span.style.backgroundColor = 'red';
+      })
+    })
+  </script>
+</body>
+</html>

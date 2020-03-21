@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>table合并</title>
+  <style>
+    table td {
+      width: 30px;
+      height: 50px;
+    }
+  </style>
+</head>
+<body>
+  <table border="1" width="600" align="center" cellspacing="0">
+    <caption><h2>个人简历</h2></caption>
+    <tr>
+      <td>姓名</td>
+      <td></td>
+      <td>性别</td>
+      <td></td>
+      <td>年龄</td>
+      <td></td>
+      <td>民族</td>
+      <td></td>
+    </tr>
+    <tr>
+        <td>毕业学校</td>
+        <td colspan="4"></td>
+        <td>学历</td>
+        <td colspan="2"></td>
+      </tr>
+      <tr>
+          <td>身份证号</td>
+          <td colspan="7"></td>
+      </tr>
+      <tr>
+          <td>家庭地址</td>
+          <td colspan="7"></td>
+      </tr> 
+      <tr>
+          <td  >备注</td>
+          <td rowspan="2" colspan="7"></td>
+      </tr> 
+      <tr>
+        <td ></td>
+      </tr>
+  </table>
+</body>
+</html>

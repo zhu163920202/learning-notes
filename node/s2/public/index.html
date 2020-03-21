@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="bootstrap/dist/css/bootstrap.min.css">
+	<style type="text/css">
+		.container {
+			padding-top: 100px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<table class="table table-striped table-hover" align="center">
+			<tr>
+				<th>time</th>
+				<th>degreee</th>
+				<th>weather</th>
+				<th>winddir</th>
+				<th>windforce</th>
+			</tr>
+		</table>
+	</div>
+	<script type="text/javascript" src="./js/jsonp.js"></script>
+	<script type="text/javascript" src="./js/template-web.js"></script>
+	<script>
+		jsonp({
+			url: 'http://wis.qq.com/weather/common',
+			data: {
+				source: 'pc',
+				weather-type: 'forecast_1h',
+				province: '江苏省',
+				city: '南京市'
+			},
+			success: function(data) {
+				console.log(data)
+			}
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./jQuery.js"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .outer {
+      position: relative;
+      width: 300px;
+      height: 300px;
+      background-color: pink;
+      margin: 100px;
+    }
+    .inner {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      width: 100px;
+      height: 100px;
+      background-color: yellow;
+    }
+  </style>
+</head>
+<body>
+  <div class="outer">
+    <div class="inner">this is content.</div>
+  </div>
+  <script>
+  $(function() {
+    // 获取或设置距离文档的位置
+    // console.log($('.inner').offset());
+    $('.inner').offset({
+      top: 200,
+      left: 100
+    })
+    // position() 返回相对于带有定位的父元素的偏移
+    console.log($('.inner').position())
+  })
+  </script>
+</body>
+</html>

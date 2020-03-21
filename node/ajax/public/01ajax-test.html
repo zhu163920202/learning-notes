@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		// 创建ajax对象
+		var xhr = new XMLHttpRequest()
+		// 请求方式 请求地址
+		xhr.open('get', 'http://localhost:3000/first')
+		// 发送请求
+		xhr.send()
+		// 获取服务器端给客户端的响应数据
+		xhr.onload = function() {
+			// console.log(xhr.responseText)
+			var res = JSON.parse(xhr.responseText)
+			console.log(res)
+			console.log(typeof res)
+			var str = '<h2>'+ res.hello +'</h2>'
+			console.log(str)
+			document.body.innerHTML = str
+		}
+	</script>
+</body>
+</html>

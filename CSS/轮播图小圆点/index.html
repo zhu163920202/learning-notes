@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    a {
+      text-decoration: none;
+      color: #fff;
+    }
+    .wrap {
+      position: relative;
+      width: 520px;
+      height: 280px;
+      margin: 100px auto;
+      /* background-color: #f00; */
+    }
+    .arr-l,
+    .arr-r {
+      position: absolute;
+      top: 50%;
+      margin-top: -15px;
+      width: 20px;
+      height: 30px;
+      line-height: 30px;
+      /* background-color: #f00;
+       */
+      background: rgba(0,0,0,.2);
+    }
+    .arr-l {
+      left: 0;
+      /* 左上到右下， 顺时针 */
+      border-radius: 0 15px 15px 0;      
+    }
+    .arr-r {
+      right: 0;
+      border-radius: 15px 0 0 15px;
+      text-align: right;
+    }
+    .arr-l:hover,
+    .arr-r:hover {
+      background: rgba(0,0,0,.4);
+    }
+    .dot {
+      position: absolute;
+      left: 50%;
+      margin-left: -42px;
+      bottom: 50px;
+      width: 84px;
+      height: 14px;
+      background-color: rgba(0, 0, 0, .2);
+      text-align: center;
+      border-radius: 7px;
+    }
+    .dot li {
+      float: left;
+      width: 8px;
+      height: 8px;
+      background-color: #fff;
+      list-style: none;
+      margin-left: 5px;
+      margin-top: 3px;
+      border-radius: 4px;
+    }
+    .dot .current {
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <span class="arr-l"><a href="#">&lt;</a></span>
+    <img src="taobao.jpg" alt="">
+    <span class="arr-r"><a href="#">&gt;</a></span>
+    <div class="dot">
+      <li><a href="#"></a></li>
+      <li><a href="#"></a></li>
+      <li class="current"><a href="#"></a></li>
+      <li><a href="#"></a></li>
+      <li><a href="#"></a></li>
+      <li><a href="#"></a></li>
+    </div>
+  </div>
+</body>
+</html>

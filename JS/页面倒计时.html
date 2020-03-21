@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body, div, span {
+      margin: 0;
+      padding: 0;
+    }
+    .wrap {
+      margin: 200px;
+    }
+    span {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      background-color: #333;
+      font-size: 20px;
+      color: #fff;
+      text-align: center;
+      line-height: 40px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <span class="hour"></span>
+    <span class="minute"></span>
+    <span class="second"></span>
+  </div>
+  <script>
+    var hour = document.querySelector('.hour');
+    var minute = document.querySelector('.minute');
+    var second = document.querySelector('.second');
+
+    // var terminal = prompt('please input date: xxxx-xx-xx xx:xx:xx');
+    var terminal = +new Date('2019-12-19 18:00:00')
+
+    setInterval(cal, 1000);
+    function cal() {
+      var now = + new Date();
+      var times = (terminal - now)/1000;
+      var h = parseInt(times / 60 / 60 % 24); 
+      h = h < 10 ? '0' + h : h;
+      hour.innerHTML = h; 
+      var m = parseInt(times / 60 % 60); 
+      m = m < 10 ? '0' + m : m;
+      minute.innerHTML = m;
+      var s = parseInt(times % 60);
+      s = s < 10 ? '0' + s : s;
+      second.innerHTML = s;
+    }
+  </script>
+</body>
+</html>

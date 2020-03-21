@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>toudou</title>
+  <style>
+    body, div, img {
+      margin: 0;
+      padding: 0;
+    }
+    .wrap {
+      position: relative;
+      width: 252px;
+      margin: 100px auto;
+    }
+    img {
+      width: 256px;
+      height: 256px;
+    }
+    .mask {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: none;
+      width: 256px;
+      height: 256px;
+      background: rgba(0,0,0,.2) url(arr.png) no-repeat center center;
+    }
+    a:hover div {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <a href="#">
+      <div class="mask"></div>
+      <img src="tudou.jpg">
+    </a>
+  </div>
+</body>
+</html>

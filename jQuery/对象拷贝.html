@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./jQuery.js"></script>
+  <style>
+  
+  </style>
+</head>
+<body>
+  <div></div>
+  <input type="text">
+  <script>
+    $(function() {
+      var targetObj = {}
+      var obj = {
+        name: 'licky',
+        age: 19
+      }
+      $.extend(targetObj, obj)
+      var arr = {
+        id: 1,
+        name: '1243',
+        msg: {
+          addr: 'adfadg'
+        }
+      }
+      // 多次复制会覆盖相同属性的值，原来没有的属性则会进行添加
+      arr.name = 'lily'
+      // arr.msg.addr = '123'
+      // $.extend(targetObj, arr)
+      // arr.msg.addr = 'zxc'
+      // 浅拷贝 将原来对象中的复杂数据类型的地址复制给目标对象
+      // 深拷贝则是将原对象完全复制一份给目标对象
+      $.extend(true, targetObj, arr);
+      arr.msg.addr = 'zxc'
+      console.log(targetObj)
+    })
+  </script>
+</body>
+</html>

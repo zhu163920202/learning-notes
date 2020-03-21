@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body, div, table, table, thead, tbody, tr, th, td {
+      margin: 0;
+      padding: 0;
+    }
+    .wrap {
+      width: 300px;
+      margin: 100px auto;
+    }
+    table {
+      /* 边框合并 */
+      border-collapse: collapse;
+      border-spacing: 0;
+      border: 1px solid #ccc;
+      width: 300px;
+
+    }
+    th, td {
+      border: 1px solid #ccc;
+      color: #404060;
+      padding: 10px;
+    } 
+    th {
+      background-color: #09c;
+      color: #fff;
+    }
+    tbody tr {
+      background-color: #f0f0f0;
+
+    }
+    tbody tr:hover {
+      background-color: #fafafa;
+      cursor: pinter;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>
+            <input type="checkbox">
+          </th>
+          <th>商品</th>
+          <th>价格</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <input type="checkbox">
+          </td>
+          <td>qwrewqr</td>
+          <td>1234</td>
+        </tr>
+        <tr>
+          <td>
+            <input type="checkbox">
+          </td>
+          <td>asdfr</td>
+          <td>1234</td>
+        </tr>
+        <tr>
+          <td>
+            <input type="checkbox">
+          </td>
+          <td>zxcvqr</td>
+          <td>1234</td>
+        </tr>
+        <tr>
+          <td>
+            <input type="checkbox">
+          </td>
+          <td>qfghgf</td>
+          <td>1234</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <script>
+    // 标题行全选按钮
+    var sa = document.querySelector('thead').querySelector('input');
+
+    // 主体中复选框
+    var ins = document.querySelector('tbody').querySelectorAll('input');
+
+    sa.onclick = function() {
+      for(var i=0; i<ins.length; i++) {
+        ins[i].checked = this.checked;
+      }
+    }
+    for(var i=0;i<ins.length;i++) {
+      ins[i].onclick = function() {
+        var flag = true;
+        for (var j=0;j<ins.length; j++) {
+          if (!ins[j].checked) {
+            flag = false;
+            break;
+          }
+          
+        }
+        sa.checked = flag;
+      }
+    }
+  </script>
+</body>
+</html>

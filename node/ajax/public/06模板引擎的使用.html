@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Examples</title>
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<link href="" rel="stylesheet">
+	<!-- 1. 下载模板引擎，并将库文件引入到页面 -->
+	<script type="text/javascript" src="./js/template-web.js"></script>
+</head>
+<body>
+
+    <div id="container"> </div>
+    <!-- 2. 准备art-template模板 -->
+	<script type="text/javascript" id="tp1" >
+		// 5. 通过模板语法，将模板和数据进行拼接
+		<h1> {{ username }} {{ age }} </h1>
+		
+	</script>
+    
+	<script type="text/javascript">
+		// 3. 确定要拼接的模板和数据
+		var html = template('tp1', {username: 'lucky', age: 12})
+		// 4. 将拼接好的HTML字符串添加到页面中
+		document.getElementById('container').innerHTML = html
+	</script>
+
+</body>
+</html>

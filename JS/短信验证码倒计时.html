@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div class="wrap">
+    手机号码：<input type="number"><button>send</button>
+  </div>
+  <script>
+    var btn = document.querySelector('button');
+    var time = 10;
+    btn.addEventListener('click', function() {
+      btn.disabled = true;
+      var timer = setInterval(function() {
+        if (time == 0) {
+          clearInterval(timer);
+          btn.disabled = false;
+          btn.innerHTML = 'send';
+        } else {
+          btn.innerHTML = time + 's';
+          time--;
+        }
+      }, 1000)
+    })
+  </script>
+</body>
+</html>

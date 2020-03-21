@@ -1,0 +1,73 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  background-color: #cdcdcd;
+}
+header {
+  height: 50px;
+  background-color: #333;
+}
+section {
+  margin: 0 auto;
+}
+label {
+  float: left;
+  width: 100px;
+  height: 50px;
+  line-height: 50px;
+  color: #ddd;
+  cursor: pointer;
+  font-size: 24px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+header input {
+  float: right;
+  width: 60%;
+  height: 24px;
+  margin-top: 10px;
+  text-indent: 10px;
+  border-radius: 5px;
+  border:  none;
+  box-shadow: 1px 1px -1px rgba(255, 255, 255, .2);
+}
+input:focus {
+  outline-width: 0;
+}
+h2 {
+  position: relative;
+}
+span {
+  position: absolute;
+  top: 2px;
+  right: 10px;
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+}
+li p input {
+  top: 3px;
+  left: 40px;
+  width: 70%;
+  height: 20px;
+  line-height: 14px;
+  text-indent: 5px;
+  font-size: 14px;
+}
+footer {
+  color: #666;
+  font-size: 14px;
+  text-align: center;
+}
+@media screen and (max-device-width: 620px) {
+  section {
+    width: 96%;
+    padding: 0 2%；
+  }
+}
+@media screen and (min-device-width: 620px) {
+  section {
+    width: 600px;
+    padding: 0 10px;
+  }
+}

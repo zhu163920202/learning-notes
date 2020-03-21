@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div>
+    <input type="button" value="click1">
+    <input type="button" value="click2">
+    <input type="button" value="click3">
+    <input type="button" value="click4">
+  </div>
+  <script>
+    var btns = document.getElementsByTagName("input");
+
+    for(var i=0; i<btns.length; i++) {
+      btns[i].onclick = function() {
+        // 先去掉其他样式，再设置自己的样式
+        for(var j=0;j<btns.length;j++) {
+          btns[j].style.backgroundColor = '';
+        }
+        this.style.backgroundColor = 'pink';
+      }
+    }
+  </script>
+</body>
+</html>

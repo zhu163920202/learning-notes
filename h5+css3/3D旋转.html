@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body {
+      perspective: 400px;
+    }
+    img {
+      display: block;
+      margin: 50px auto;
+      transition: all 1s;
+    }
+    .img1:hover {
+      transform: rotateX(45deg);
+    }
+    .img2:hover {
+      transform: rotateY(80deg);
+    }
+    .img3:hover {
+      transform: rotateZ(45deg);
+    }
+  </style>
+</head>
+<body>
+  <img class="img1" src="media/dog.jpg" >
+  <img class="img2" src="media/dog.jpg" >
+  <img class="img3" src="media/dog.jpg" >
+</body>
+</html>

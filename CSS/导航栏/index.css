@@ -1,0 +1,35 @@
+div, img, ul, li {
+  margin: 0;
+  padding: 0;
+}
+.up {
+  width: 760px;
+  height: 150px;
+  margin: auto;
+}
+.nav {
+  width: 760px;
+  height: 50px;
+  margin: 0 auto;
+  background: url(images/nav_bg.jpg) repeat-x;
+}
+.nav  li {
+  list-style: none;
+  float: left;
+}
+.nav a {
+  /* display: block; */
+  display: block;
+  width: 80px;
+  height: 32px;
+  line-height: 32px;
+  background-image: url(images/button1.jpg);
+  text-decoration: none;
+  font-size: 14px;
+  color: #40510a;
+	text-align: center;
+}
+.nav a:hover {
+  background-image: url(images/button2.jpg);
+
+}

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    li {
+      list-style: none;
+    }
+    a {
+      text-decoration: none;
+    }
+    .clearfix::before,
+    .clearfix::after {
+      content: " ";
+      height: 0;
+      line-height: 0;
+      display: block;
+      visibility: hidden;
+    }
+    .clearfix::after {
+      clear: both;
+    }
+    body {
+	    padding: 100px;
+	    background-color: #f5f5f5;
+    }
+    .product li {
+      position: relative;
+      float: left;
+      width: 234px;
+      height: 246px;
+      padding: 34px 0 20px;
+      background-color: #fff;
+    }
+    .pro-img {
+      width: 150px;
+      height: 150px;
+      background-color: pink;
+      margin: 0 auto 18px;
+    }
+    .pro-img a {
+      width: 100%;
+      height: 100%;
+    }
+    .pro-img img {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+    .product li h3 {
+      margin: 0 10px;
+      font-size: 14px;
+      text-align: center;
+      font-weight: normal;
+    }
+    .product li h3 a {
+      color: #333;
+    }
+    .desc {
+      margin: 0 10px 10px;
+      height: 18px;
+      font-size: 12px;
+      text-align: center;
+      color: #b0b0b0;
+    }
+    .price {
+      font-size: 14px;
+      text-align: center;
+      margin: 0 10px 10px;
+      color: #ff6700;
+    }
+    .price del {
+      color: #b0b0b0;
+    }
+    .review {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      font-size: 12px;
+      background-color: #ff6700;
+      width: 234px;
+      opacity: 0;
+      transition: all .2s linear;
+    }
+    .review a  {
+      display: block;
+      padding: 8px 30px;
+      height: 60px;
+    }
+    .review a span{
+      display: block;
+      color: #fff;
+      margin-bottom: 5px;
+    }
+    .product li:hover {
+      box-shadow: 0 15px 30px rgba(0, 0, 0, .1);
+      transform: translate3d(0, -2px, 0)
+    }
+    .product li:hover .review {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="product">
+    <ul>
+      <li>
+        <div class="pro-img">
+          <a href="#">
+            <img src="media/scale.jpg" alt="">
+          </a>
+        </div>
+        <h3><a href="#">小米电视4A 43英寸青春版</a></h3>
+        <p class="desc">全高清屏 / 人工智能语音</p>
+        <p class="price">
+          <span>1499</span>
+          <del>1699</del>
+        </p>
+        <div class="review">
+          <a href="#">
+            <span class="msg">一如既往的好，小米情怀</span>
+						<span class="auther"> 来自于 惊喜 的评价 </span>
+          </a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .wrap {
+      width: 300px;
+      height: 300px;
+      background-color: skyblue;
+      margin: 100px auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap"></div>
+  <script>
+    var box = document.querySelector('.wrap');
+
+    box.addEventListener('mousemove', function(e) {
+    var x = e.pageX - this.offsetLeft;
+    // console.log(x)
+    var y = e.pageY - this.offsetTop;
+    this.innerHTML = '(' + x + ',' + y +')';
+    })
+  </script>
+</body>
+</html>

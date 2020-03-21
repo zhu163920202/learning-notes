@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var xhr = new XMLHttpRequest()
+		xhr.open('post', 'http://localhost:3000/json')
+		xhr.setRequestHeader('Content-Type', 'application/json')
+		xhr.send(JSON.stringify({name:'lucky', age:12}))
+		xhr.onload = function() {
+			console.log(xhr.responseText)
+		}
+	</script>
+</body>
+</html>

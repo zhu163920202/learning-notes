@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .info {
+      display: inline-block;
+      font-size: 12px;
+      color: #999;
+      padding-left: 20px;
+      background: url(images/mess.png) no-repeat;
+    }
+    .wrong {
+      color: red;
+      background-image: url(images/wrong.png);
+    }
+    .right {
+      color: green;
+      background-image: url(images/right.png);
+    }
+  </style>
+</head>
+<body>
+  <div class="register">
+    <input type="password">
+    <p class="info">请输入6~16位密码</p>
+  </div>
+  <script>
+    var text = document.querySelector('input');
+    var mess = document.querySelector('.info');
+
+    text.onblur = function() {
+      if (this.value.length < 6 || this.value.length > 16) {
+        mess.className = "info wrong";
+        mess.innerHTML = 'please input the require length';
+      } else {
+        mess.className = "info right";
+        mess.innerHTML = 'pass'
+      }
+    }
+  </script>
+</body>
+</html>

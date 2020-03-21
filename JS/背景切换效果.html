@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body, ul, li, img {
+      margin: 0;
+      padding: 0;
+    }
+    .bgi {
+      overflow: hidden;
+      width: 410px;
+      margin: 100px auto;
+      border: 1px solid #ccc;
+      background-color: #fff;
+      padding-top: 3px;
+    }
+    .bgi li {
+      list-style: none;
+      float: left;
+      cursor: pointer;
+      margin-left: 2px;
+    }
+    .bgi img {
+      
+      width: 100px;
+    }
+  </style>
+</head>
+<body>
+  <ul class="bgi">
+    <li><img src="images/1.jpg" alt=""></li>
+    <li><img src="images/2.jpg" alt=""></li>
+    <li><img src="images/3.jpg" alt=""></li>
+    <li><img src="images/4.jpg" alt=""></li>
+  </ul>
+  <script>
+    var bgi = document.querySelectorAll('img');
+    for(var i=0; i<bgi.length;i++) {
+      bgi[i].onclick = function() {
+        document.body.style.backgroundImage = 'url(' + this.src + ')';
+      }
+    }
+  </script>
+</body>
+</html>

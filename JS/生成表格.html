@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .wrap {
+      width: 600px;
+      margin: 100px auto;
+    }
+    table {
+      margin-top: 10px;
+      width: 600px;
+      cursor: pointer;
+      border-collapse: collapse;
+      border: 1px solid #999;
+    }
+    th {
+      background-color: #ccc;
+    }
+    table th, td {
+      text-align: center;
+      border: 1px solid #999;
+    }
+    
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="header">
+      请输入姓名：<input type="text" id="username"> <br>
+      请输入邮箱：<input type="text" id="email">
+    </div>
+    <input type="button" value="submit" id="btn">
+    <table>
+      <thead>
+        <tr>
+          <th>姓名</th>
+          <th>邮箱</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>lucky</td>
+          <td>123456@163.com</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <script>
+    var btn = document.querySelector('#btn');
+    btn.onclick = function() {
+      var flag = true;
+      var username = document.querySelector("#username");
+      var email = document.querySelector("#email");
+      if (username.value == '' || email.value == '') {
+        alert('please input required');
+        return false;
+      } else {
+        var tr1 = document.createElement('tr');
+        var tb = document.querySelector('tbody');
+        tb.appendChild(tr1);
+        var td1 = document.createElement('td');
+        var td2 = document.createElement('td');
+        // td1.innerHTML = username.value;
+        // td2.innerHTML = email.value;
+        td1.innerText = username.value;
+        td2.innerText = email.value;
+        tr1.appendChild(td1);
+        tr1.appendChild(td2);
+      }
+    }
+  </script>
+</body>
+</html>
